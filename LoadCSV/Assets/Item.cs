@@ -1,0 +1,82 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class Item
+{
+    public float t;
+    public float T1Tx;
+    public float T1Ty;
+    public float T1Tz;
+    public float T1Rx;
+    public float T1Ry;
+    public float T1Rz;
+    public int T1Error;
+    public float T2Tx;
+    public float T2Ty;
+    public float T2Tz;
+    public float T2Rx;
+    public float T2Ry;
+    public float T2Rz;
+    public int T2Error;
+    public float T3Tx;
+    public float T3Ty;
+    public float T3Tz;
+    public float T3Rx;
+    public float T3Ry;
+    public float T3Rz;
+    public int T3Error;
+    public float T4Tx;
+    public float T4Ty;
+    public float T4Tz;
+    public float T4Rx;
+    public float T4Ry;
+    public float T4Rz;
+    public int T4Error;
+    public float T5Tx;
+    public float T5Ty;
+    public float T5Tz;
+    public float T5Rx;
+    public float T5Ry;
+    public float T5Rz;
+    public int T5Error;
+    public Item(Item d) {
+        t = d.t;
+        T1Tx = d.T1Tx;
+        T1Ty = d.T1Ty;
+        T1Tz = d.T1Tz;
+        T1Rx = d.T1Rx;
+        T1Ry = d.T1Ry;
+        T1Rz = d.T1Rz;
+        T1Error = d.T1Error;
+        T2Tx = d.T2Tx;
+        T2Ty = d.T2Ty;
+        T2Tz = d.T2Tz;
+        T2Rx = d.T2Rx;
+        T2Ry = d.T2Ry;
+        T2Rz = d.T2Rz;
+        T2Error = d.T2Error;
+        T3Tx = d.T3Tx;
+        T3Ty = d.T3Ty;
+        T3Tz = d.T3Tz;
+        T3Rx = d.T3Rx;
+        T3Ry = d.T3Ry;
+        T3Rz = d.T3Rz;
+        T3Error = d.T3Error;
+        T4Tx = d.T4Tx;
+        T4Ty = d.T4Ty;
+        T4Tz = d.T4Tz;
+        T4Rx = d.T4Rx;
+        T4Ry = d.T4Ry;
+        T4Rz = d.T4Rz;
+        T4Error = d.T4Error;
+        T5Tx = d.T5Tx;
+        T5Ty = d.T5Ty;
+        T5Tz = d.T5Tz;
+        T5Rx = d.T5Rx;
+        T5Ry = d.T5Ry;
+        T5Rz = d.T5Rz;
+        T5Error = d.T5Error;
+    }
+}
