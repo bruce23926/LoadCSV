@@ -16,6 +16,9 @@ public class TargetTimeline : MonoBehaviour
     public GameObject T3;
     public GameObject T4;
     public GameObject T5;
+    public GameObject T3Error;
+    public GameObject T4Error;
+    public GameObject T5Error;
     
     void Start() {
         MaxTime = loadExcel.itemDatabase.Count;
@@ -27,9 +30,21 @@ public class TargetTimeline : MonoBehaviour
             i = Mathf.RoundToInt(n);
             GameObject t1 = Instantiate(T1, new Vector3(loadExcel.itemDatabase[i].T1Tx, loadExcel.itemDatabase[i].T1Ty, loadExcel.itemDatabase[i].T1Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T1Rx, loadExcel.itemDatabase[i].T1Ry, loadExcel.itemDatabase[i].T1Rz));
             GameObject t2 = Instantiate(T2, new Vector3(loadExcel.itemDatabase[i].T2Tx, loadExcel.itemDatabase[i].T2Ty, loadExcel.itemDatabase[i].T2Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T2Rx, loadExcel.itemDatabase[i].T2Ry, loadExcel.itemDatabase[i].T2Rz));
-            GameObject t3 = Instantiate(T3, new Vector3(loadExcel.itemDatabase[i].T3Tx, loadExcel.itemDatabase[i].T3Ty, loadExcel.itemDatabase[i].T3Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T3Rx, loadExcel.itemDatabase[i].T3Ry, loadExcel.itemDatabase[i].T3Rz));
-            GameObject t4 = Instantiate(T4, new Vector3(loadExcel.itemDatabase[i].T4Tx, loadExcel.itemDatabase[i].T4Ty, loadExcel.itemDatabase[i].T4Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T4Rx, loadExcel.itemDatabase[i].T4Ry, loadExcel.itemDatabase[i].T4Rz));
-            GameObject t5 = Instantiate(T5, new Vector3(loadExcel.itemDatabase[i].T5Tx, loadExcel.itemDatabase[i].T5Ty, loadExcel.itemDatabase[i].T5Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T5Rx, loadExcel.itemDatabase[i].T5Ry, loadExcel.itemDatabase[i].T5Rz));
+            if (loadExcel.itemDatabase[i].T3Error == 1) {
+                GameObject t3 = Instantiate(T3Error, new Vector3(loadExcel.itemDatabase[i].T3Tx, loadExcel.itemDatabase[i].T3Ty, loadExcel.itemDatabase[i].T3Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T3Rx, loadExcel.itemDatabase[i].T3Ry, loadExcel.itemDatabase[i].T3Rz));
+            } else {
+                GameObject t3 = Instantiate(T3, new Vector3(loadExcel.itemDatabase[i].T3Tx, loadExcel.itemDatabase[i].T3Ty, loadExcel.itemDatabase[i].T3Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T3Rx, loadExcel.itemDatabase[i].T3Ry, loadExcel.itemDatabase[i].T3Rz));
+            }
+            if (loadExcel.itemDatabase[i].T4Error == 1) {
+                GameObject t4 = Instantiate(T4Error, new Vector3(loadExcel.itemDatabase[i].T4Tx, loadExcel.itemDatabase[i].T4Ty, loadExcel.itemDatabase[i].T4Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T4Rx, loadExcel.itemDatabase[i].T4Ry, loadExcel.itemDatabase[i].T4Rz));
+            } else {
+                GameObject t4 = Instantiate(T4, new Vector3(loadExcel.itemDatabase[i].T4Tx, loadExcel.itemDatabase[i].T4Ty, loadExcel.itemDatabase[i].T4Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T4Rx, loadExcel.itemDatabase[i].T4Ry, loadExcel.itemDatabase[i].T4Rz));
+            }
+            if (loadExcel.itemDatabase[i].T5Error == 1) {
+                GameObject t5 = Instantiate(T5Error, new Vector3(loadExcel.itemDatabase[i].T5Tx, loadExcel.itemDatabase[i].T5Ty, loadExcel.itemDatabase[i].T5Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T5Rx, loadExcel.itemDatabase[i].T5Ry, loadExcel.itemDatabase[i].T5Rz));
+            } else {
+                GameObject t5 = Instantiate(T5, new Vector3(loadExcel.itemDatabase[i].T5Tx, loadExcel.itemDatabase[i].T5Ty, loadExcel.itemDatabase[i].T5Tz), Quaternion.EulerRotation(loadExcel.itemDatabase[i].T5Rx, loadExcel.itemDatabase[i].T5Ry, loadExcel.itemDatabase[i].T5Rz));
+            }
             // t1.transform.Rotate(loadExcel.itemDatabase[i].T1Rx, loadExcel.itemDatabase[i].T1Ry, loadExcel.itemDatabase[i].T1Rz, Space.World);
             PreTime = SetTime;
             CurrentTime = loadExcel.itemDatabase[i].t;

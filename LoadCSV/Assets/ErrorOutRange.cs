@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOutRanged : MonoBehaviour
+public class ErrorOutRange : MonoBehaviour
 {
     public int order;
-    
+    public int error = 0;
     public TargetTimeline targetTimeline;
     public GameObject LoadExcel;
     public Material m_Material;
@@ -13,7 +13,7 @@ public class DestroyOutRanged : MonoBehaviour
         LoadExcel = GameObject.Find("LoadData");
         targetTimeline = LoadExcel.GetComponent<TargetTimeline>();
         order = targetTimeline.i;
-        
+        error = LoadExcel.GetComponent<LoadExcel>().itemDatabase[targetTimeline.i].T1Error;
         m_Material = GetComponent<Renderer>().material;
     }
     // Update is called once per frame
@@ -22,13 +22,23 @@ public class DestroyOutRanged : MonoBehaviour
         if ((order > (targetTimeline.i+600))||(order < (targetTimeline.i-600))) {
             Destroy(this.gameObject);
         }
-        
-        if (order != targetTimeline.i) {
+        if (error == 1) {
             Color c = m_Material.color;
-            c.a = 0.05f;
+            c = Color.red;
+            if (order != targetTimeline.i) {
+                c.a = 0.05f;
+            } else {
+                c.a = 1.0f;
+            }
             m_Material.color = c;
+        } else {
+            if (order != targetTimeline.i) {
+                Color c = m_Material.color;
+                c.a = 0.05f;
+                m_Material.color = c;
+            }
         }
-        
         
     }
 }
+
